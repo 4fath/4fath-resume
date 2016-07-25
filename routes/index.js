@@ -24,5 +24,13 @@ router.get('/en*', function(req, res, next){
 	res.redirect('/en');
 });
 
+router.post('/*',function(req,res,next){
+	res.setHeader('content-type', 'text/javascript');
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	var dummyJson = {"response" : "what do you expect for that really ? its just a resume dude"};
+	res.send(dummyJson);
+});
+
 
 module.exports = router;
